@@ -2,14 +2,13 @@ def read_phonebook(filename="phonebook.txt"):
     with open(filename, "a+"):
         pass
 
-    with open(filename, "r") as file:
+with open(filename, "r") as file:
         lines = file.readlines()
     phonebook = {}
     for line in lines:
         surname, name, phone = line.strip().split(";")
         phonebook[surname] = (name, phone)
     return phonebook
-
 
 def write_phonebook(phonebook, filename="phonebook.txt"):
     with open(filename, "w") as file:
